@@ -12,7 +12,9 @@
   </head>
   <body>
     <nav>
-      <div class="nav-logo"><a href="#">Develop<span>e</span>r.</a></div>
+      <div class="nav-logo">
+        <a href="#">Front-end Develop<span>e</span>r.</a>
+      </div>
       <div class="nav-container">
         <ul>
           <li><a href="#home">HOME</a></li>
@@ -84,7 +86,11 @@
               structure of a Web page. HTML consists of a series of elements.
               HTML elements tell the browser how to display the content.
             </p>
-            <a href="#" class="read-more">Read more...</a>
+            <button class="btn">
+              <a href="https://en.wikipedia.org/wiki/HTML" class="read-more"
+                >Read more...</a
+              >
+            </button>
           </div>
 
           <div class="service-card">
@@ -97,11 +103,11 @@
               “cascading style sheets” which are equally called CSS files (.
               css).
             </p>
-            <a
-              href="#https://www.w3schools.com/css/default.asp"
-              class="read-more"
-              >Read more...</a
-            >
+            <button class="btn">
+              <a href="https://en.wikipedia.org/wiki/CSS" class="read-more"
+                >Read more...</a
+              >
+            </button>
           </div>
 
           <div class="service-card">
@@ -114,11 +120,13 @@
               you to look at — displaying timely content updates, interactive
               maps, animated 2D/3D graphics, scrolling video jukeboxes
             </p>
-            <a
-              href="https://www.w3schools.com/js/js_intro.asp"
-              class="read-more"
-              >Read more...</a
-            >
+            <button class="btn">
+              <a
+                href="https://en.wikipedia.org/wiki/JavaScript"
+                class="read-more"
+                >Read more...</a
+              >
+            </button>
           </div>
         </div>
       </div>
@@ -177,17 +185,43 @@
             <p>Road</p>
           </div>
           <div class="social-icons">
-            <a href="" class="icon"><i class="ri-facebook-fill"></i></a>
-            <a href="" class="icon"><i class="ri-mail-line"></i></a>
-            <a href="" class="icon"><i class="ri-instagram-fill"></i></a>
-            <a href="" class="icon"><i class="ri-linkedin-fill"></i></a>
+            <a
+              href="https://www.facebook.com/profile.php?id=100051858127579"
+              class="icon"
+              ><i class="ri-facebook-fill"></i
+            ></a>
+            <a href="https://github.com/amit-kr-mahato" class="icon"
+              ><i class="ri-github-fill"></i
+            ></a>
+            <a href="https://www.instagram.com/amitm6427/?hl=en" class="icon"
+              ><i class="ri-instagram-fill"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/amit-singh-7a15752b4/"
+              class="icon"
+              ><i class="ri-linkedin-fill"></i
+            ></a>
           </div>
         </div>
-        <form action="" class="footer-form">
-          <input type="text" placeholder="Your name" />
-          <input type="email" placeholder="Your email address" />
-          <input type="number" placeholder="Your phone number" />
-          <textarea cols="30" rows="10" placeholder="Your idea"></textarea>
+        <form
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          class="footer-form"
+        >
+          <input
+            type="hidden"
+            name="access_key"
+            value="a1f45970-7570-4947-a282-f60f807d018d"
+          />
+          <input type="text" name="name" placeholder="Your name" />
+          <input type="email" name="email" placeholder="Your email address" />
+          <input type="number" name="number" placeholder="Your phone number" />
+          <textarea
+            cols="30"
+            name="email"
+            rows="10"
+            placeholder="Your idea"
+          ></textarea>
           <button type="submit" class="btn">Send message</button>
         </form>
       </div>
