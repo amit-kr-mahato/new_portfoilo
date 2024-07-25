@@ -18,11 +18,11 @@
       </div>
       <div class="nav-container">
         <ul>
-          <li><a href="#home">HOME</a></li>
+          <li><a href="#home">Home</a></li>
           <li><a href="#About">About</a></li>
           <li><a href="#service">service</a></li>
           <li><a href="#project">project</a></li>
-          <li><a href="#contact">CONTACT US</a></li>
+          <li><a href="#contact">Contact me</a></li>
         </ul>
       </div>
     </nav>
@@ -95,6 +95,7 @@
                 >Read more...</a
               >
             </button>
+            <!-- <span class="count">1</span> -->
           </div>
 
           <div class="service-card">
@@ -112,6 +113,7 @@
                 >Read more...</a
               >
             </button>
+            <!-- <span class="count">2</span> -->
           </div>
 
           <div class="service-card">
@@ -131,6 +133,7 @@
                 >Read more...</a
               >
             </button>
+            <!-- <span class="count">3</span> -->
           </div>
         </div>
       </div>
@@ -211,30 +214,103 @@
           action="https://api.web3forms.com/submit"
           method="POST"
           class="footer-form"
+          id="contactForm"
         >
           <input
             type="hidden"
             name="access_key"
             value="a1f45970-7570-4947-a282-f60f807d018d"
           />
-          <input type="text" name="name" placeholder="Your name" />
-          <input type="email" name="email" placeholder="Your email address" />
-          <input type="number" name="number" placeholder="Your phone number" />
+          <input type="text" id="name" name="name" placeholder="Your name" />
+          <small class="error" id="nameError">Please enter your name.</small
+          ><br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your email address"
+          />
+          <small class="error" id="emailError"
+            >Please enter a valid email address.</small
+          ><br />
+          <input
+            type="number"
+            id="number"
+            name="number"
+            placeholder="Your phone number"
+          />
+          <small class="error" id="numberError"
+            >Please enter a valid phone number.</small
+          ><br />
           <textarea
             cols="30"
             name="email"
             rows="10"
             placeholder="Your idea"
+            id="idea"
           ></textarea>
+          <small class="error" id="ideaError">Please enter your idea.</small
+          ><br />
           <button type="submit" class="btn">Send message</button>
         </form>
       </div>
     </footer>
-    <!-- <script>
-      function display() {
-        port = document.getElementById("contact");
-        port.style.display = "block";
-      }
-    </script> -->
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (event) {
+          let isValid = true;
+
+          // Validate name
+          const name = document.getElementById("name");
+          const nameError = document.getElementById("nameError");
+          if (name.value.trim() === "") {
+            nameError.style.display = "block";
+            isValid = false;
+          } else {
+            nameError.style.display = "none";
+          }
+
+          // Validate email
+          const email = document.getElementById("email");
+          const emailError = document.getElementById("emailError");
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailPattern.test(email.value.trim())) {
+            emailError.style.display = "block";
+            isValid = false;
+          } else {
+            emailError.style.display = "none";
+          }
+
+          // Validate phone number
+          const number = document.getElementById("number");
+          const numberError = document.getElementById("numberError");
+          if (
+            number.value.trim() === "" ||
+            isNaN(number.value) ||
+            number.value.length < 10
+          ) {
+            numberError.style.display = "block";
+            isValid = false;
+          } else {
+            numberError.style.display = "none";
+          }
+
+          // Validate idea
+          const idea = document.getElementById("idea");
+          const ideaError = document.getElementById("ideaError");
+          if (idea.value.trim() === "") {
+            ideaError.style.display = "block";
+            isValid = false;
+          } else {
+            ideaError.style.display = "none";
+          }
+
+          // If any validation fails, prevent form submission
+          if (!isValid) {
+            event.preventDefault();
+          }
+        });
+    </script>
   </body>
 </html>
